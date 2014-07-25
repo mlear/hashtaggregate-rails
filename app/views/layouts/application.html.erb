@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Source</title>
+  <%= favicon_link_tag %>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900|Raleway:400,700|Josefin+Slab:400,700' rel='stylesheet' type='text/css'>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render partial: 'partials/header' %>
+  <%= yield %>
+  <%= render partial: 'partials/footer' %>
+</body>
+</html>
