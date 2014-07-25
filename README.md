@@ -32,10 +32,11 @@ An app that crowdsources the process of choosing the funniest tweets to be read 
 just type this:
 <tt>foreman start</tt>
 
-~- fire up redis~
+
+~fire up redis~
 <tt>redis-server</tt>
 
-~- fire up sidekiq:~
+~fire up sidekiq:~
 <tt>bundle exec sidekiq -r./config/environment.rb</tt>
 
 ##for deployment
