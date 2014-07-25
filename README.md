@@ -34,9 +34,11 @@ just type this:
 
 
 ~fire up redis~
+
 <tt>redis-server</tt>
 
 ~fire up sidekiq:~
+
 <tt>bundle exec sidekiq -r./config/environment.rb</tt>
 
 ##for deployment
