@@ -16,6 +16,6 @@ task "stream:start" => :environment do
       location: twitter_tweet.place.full_name
     }
     Backlog.perform_async(new_tweet)
-    p twitter_tweet.text if twitter_tweet.is_a?(Twitter::Tweet)
+    p twitter_tweet.text if twitter_tweet.is_a?(Twitter::Tweet) && twitter_tweet.geo.coordinates
   end
 end
