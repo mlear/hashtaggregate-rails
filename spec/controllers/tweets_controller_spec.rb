@@ -10,11 +10,4 @@ describe TweetsController do
       # expect(assigns(:tweet).class).to be Twitter::Tweet
     end
   end
-
-  context '#send_tweets' do
-    it 'redirect to root path' do
-      # send the tweet
-      # test that it redirects to root path
-    end
-  end
 end
