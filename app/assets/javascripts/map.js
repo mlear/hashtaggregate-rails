@@ -77,7 +77,7 @@ $(document).ready(function () {
     function createTweetObject(tweet, index) {
         console.log('createTweetObject ' + tweet);
         aTweet = new Tweet(tweet.content, tweet.username, tweet.latitude , tweet.longitude, index);
-        window.searchArray.push({id: index, username: tweet.username, content: tweet.content})
+        window.searchArray.push({id: index, username: tweet.username, content: tweet.content, latitude: tweet.latitude, longitude: tweet.longitude})
         display(aTweet);
         window.tweetArray.push(aTweet);
             // you can create anything you want with each tweet here
@@ -96,7 +96,14 @@ $(document).ready(function () {
         // console.log(marker);
     }
 
-
+    $(".searchable").on("click", "a", function(event) {
+        event.preventDefault()
+        var params = {};
+        window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+            params[key] = value;
+        });
+        map.setView(params)
+    })
 
 });
 
