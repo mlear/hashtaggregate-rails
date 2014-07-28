@@ -5,7 +5,6 @@ task "stream:start" => :environment do
   set_up_client
   puts 'client set up...'
   TweetStream::Client.new.track("#SDCC") do |twitter_tweet|
-    # next if twitter_tweet.text.include? 'RT'
     new_tweet = {
       username: twitter_tweet.user.screen_name,
       content: twitter_tweet.full_text,
@@ -24,6 +23,6 @@ task "stream:start" => :environment do
 
     Backlog.perform_async(new_tweet, original_tweet_params)
     # p twitter_tweet.retweeted_status if twitter_tweet.retweeted_status
-    # p twitter_tweet.text if twitter_tweet.is_a?(Twitter::Tweet) && twitter_tweet.geo.coordinates
+    p twitter_tweet.text if twitter_tweet.is_a?(Twitter::Tweet) && twitter_tweet.geo.coordinates
   end
 end
