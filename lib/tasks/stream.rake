@@ -11,7 +11,6 @@ task "stream:start" => :environment do
       content: twitter_tweet.full_text,
       latitude: twitter_tweet.geo.coordinates[0],
       longitude: twitter_tweet.geo.coordinates[1],
-      url: twitter_tweet.place.url,
       twitter_id: twitter_tweet.id,
       location: twitter_tweet.place.full_name
     }
