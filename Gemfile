@@ -66,3 +66,6 @@ gem 'figaro'
 
 gem 'travis-lint'
 
+#Parse API XML data using:
+gem 'nokogiri'
+
