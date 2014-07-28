@@ -60,7 +60,6 @@ gem 'puma'
 gem 'rb-fsevent'
 gem 'tweetstream'
 gem "eventmachine"
-gem 'foreman'
 
 #Manage ENV keys
 gem 'figaro'
