@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/matt/hashtaggregate-rails/app/controllers/tweets_controller.rb": [
+      "/Users/apprentice/hashtaggregate-rails/app/controllers/tweets_controller.rb": [
         1,
         1,
         1,
@@ -36,19 +36,19 @@
         null,
         null
       ],
-      "/Users/apprentice/matt/hashtaggregate-rails/app/controllers/application_controller.rb": [
+      "/Users/apprentice/hashtaggregate-rails/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         null,
         null
       ],
-      "/Users/apprentice/matt/hashtaggregate-rails/app/models/tweet.rb": [
+      "/Users/apprentice/hashtaggregate-rails/app/models/tweet.rb": [
         1,
         1,
         null
       ]
     },
-    "timestamp": 1406494168
+    "timestamp": 1406559296
   }
 }
