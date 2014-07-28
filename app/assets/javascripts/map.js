@@ -44,12 +44,12 @@ $(document).ready(function () {
     }
 
     var counter;
-    // var map = L.map('map', {
-    //     center: [41.84, -87.65],
-    //     zoom: 5,
-    //     scrollWheelZoom: true
-    //     // zoomControl: false
-    // });
+    var map = L.map('map', {
+        center: [41.84, -87.65],
+        zoom: 5,
+        scrollWheelZoom: true
+        // zoomControl: false
+    });
 
     L.tileLayer(MAP_IMAGE_LAYER_PATTERN, {
         maxZoom: 18,
@@ -96,56 +96,8 @@ $(document).ready(function () {
         // console.log(marker);
     }
 
-    app.tweets()
 
- // $(head).append(
- //  "<script>
- //      function TweetsCtrl($scope) {
- //            $scope.tweets = window.tweetArray;
-
- //            $scope.title = 'Tweets list';}
- //  </script>")
-     // function TweetsCtrl($scope) {
-     //        $scope.tweets = window.tweetArray;
-
-     //        $scope.title = 'Tweets list';
-     //    }
-
-
-//     var app = angular.module( "hashtag", [] );
-//         app.controller("AppController", function( $scope ) {
-
-//                 $scope.tweets = getTweets();
-//                 $scope.rebuildTweets = function() {
-
-//                     $scope.tweets = getTweets();
-
-//                 };
-
-//                 function getTweets() {
-
-//                     // return(window.tweetArray);
-
-//                     return([
-//                         {
-//                             id: 1,
-//                             name: "Tweet 1 Bitches"
-//                         },
-//                         {
-//                             id: 2,
-//                             name: "Tweet 2 Bitches"
-//                         },
-//                         {
-//                             id: 3,
-//                             name: "Tweet 3 Bitches"
-//                         }
-//                     ]);
-//                 }
-//             }
-//         );
 
 });
 
-// $(window).load(function(){
 
-// })

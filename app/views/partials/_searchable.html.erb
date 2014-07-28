@@ -1,0 +1,9 @@
+<section id='searchable' class='searchable'>
+  <h1>{{title}}</h1>
+  Search: <input ng-model="search">
+  <ul>
+      <li ng-repeat="tweet in tweets | filter:search" ng-show="search">
+          {{tweet.content}}
+      </li>
+  </ul>
+</section>

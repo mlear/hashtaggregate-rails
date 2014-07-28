@@ -7,9 +7,12 @@ var app = angular.module( "hashtag", [] );
 
 app.controller(
     "AppController",
-    function( $scope ) {
+    function( $scope, $interval ) {
 
-        $scope.tweets = getTweets();
+        $interval(function(){
+          $scope.tweets = window.searchArray
+          console.log(window.searchArray)}, 5000);
+
         $scope.rebuildTweets = function() {
             $scope.tweets = getTweets();
         };
@@ -19,19 +22,23 @@ app.controller(
             return([
                 {
                     id: 1,
-                    name: "Sup Tweet 1 Bitches"
+                    name: " Tweet 1 "
                 },
                 {
                     id: 2,
-                    name: "Tweets 2 Bitches"
+                    name: "Tweets 2 "
                 },
                 {
                     id: 3,
-                    name: "Tweets 3 Bitches"
+                    name: "Tweets 3 "
                 },
                                 {
                     id: 4,
-                    name: "Tweets 4 Bitches"
+                    name: "Tweets 4 "
+                },
+                                                {
+                    id: 5,
+                    name: "Tweets 4 "
                 }
             ]);
         }
@@ -44,7 +51,7 @@ app.tweetSearch('getByUsername', function() {
     tweetArray.forEach(function(tweet){
       if (tweet.username === userName) tweetResults.push(tweet);
     if (tweetResults.length > 0) return tweetResults;
-    }
+    })
     return null;
   }
 })
