@@ -59,9 +59,13 @@ gem 'puma'
 gem 'rb-fsevent'
 gem 'tweetstream'
 gem "eventmachine"
+gem 'foreman'
 
 #Manage ENV keys
 gem 'figaro'
 
 gem 'travis-lint'
+
+#Parse API XML data using:
+gem 'nokogiri'
 
