@@ -98,11 +98,13 @@ $(document).ready(function () {
 
     $(".searchable").on("click", "a", function(event) {
         event.preventDefault()
-        var params = {};
-        window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-            params[key] = value;
-        });
-        map.setView(params)
+        var params = [];
+        var paramsFloat = []
+        params = event.target.attributes[0].value.split(',')
+        $.each(params, function( index, value) {
+            paramsFloat.push(parseFloat(value))
+        })
+        map.setView(new L.LatLng(params[1], params[0]), zoom = 8, animate = true)
     })
 
 });

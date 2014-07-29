@@ -10,8 +10,7 @@ app.controller(
     function( $scope, $interval ) {
 
         $interval(function(){
-          $scope.tweets = window.searchArray
-          console.log(window.searchArray)}, 5000);
+          $scope.tweets = window.searchArray}, 5000);
 
 
     }
