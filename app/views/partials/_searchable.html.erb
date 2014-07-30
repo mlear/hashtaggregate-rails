@@ -2,7 +2,7 @@
   <h1>{{title}}</h1>
   Search: <input ng-model="search">
   <ul>
-      <li class="tweet" ng-repeat="tweet in tweets | filter:search | orderBy:'stars':!reverse | limitTo:10" ng-show="search">
+      <li ng-repeat="tweet in tweets track by $index | filter:search | orderBy:'stars':!reverse | limitTo:10" ng-show="search">
           <a href="{{tweet.longitude}}, {{tweet.latitude}}">{{tweet.content}} : {{tweet.username}} : Favorites: {{tweet.stars}}</a>
       </li>
   </ul>
