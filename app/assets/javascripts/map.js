@@ -1,7 +1,5 @@
 var MAP_IMAGE_LAYER_PATTERN = 'http://{s}.tiles.mapbox.com/v3/zpfled.inakeg99/{z}/{x}/{y}.png';
-// var ArrayForEach = [].forEach;
 var ArrayMap = [].map;
-// var tweetObjects = [];
 
 function Tweet(content, username, latitude, longitude, id) {
     this.id = id;
@@ -18,7 +16,7 @@ var lastTweet;
 $(document).ready(function () {
 
     getTweetsFromServer();
-    var load = setInterval(getTweetsFromServer, 250);
+    var load = setInterval(getTweetsFromServer, 5);
 
     function getTweetsFromServer(){
         console.log('number of tweets:' + window.tweetArray.length)
@@ -48,7 +46,6 @@ $(document).ready(function () {
         center: [41.84, -87.65],
         zoom: 5,
         scrollWheelZoom: true
-        // zoomControl: false
     });
 
     L.tileLayer(MAP_IMAGE_LAYER_PATTERN, {
@@ -58,11 +55,6 @@ $(document).ready(function () {
     function errorMessage(data) {
         console.log('error');
     }
-
-    // $('.problems').on('click', function(event) {
-    //     event.preventDefault();
-    //     getTweetsFromServer();
-    // });
 
     function cycleTweets(tweets) {
         console.log('cycleTweets ' + tweets);
@@ -75,9 +67,8 @@ $(document).ready(function () {
 // {}
 
     function createTweetObject(tweet, index) {
-        console.log('createTweetObject ' + tweet);
         aTweet = new Tweet(tweet.content, tweet.username, tweet.latitude , tweet.longitude, index);
-        window.searchArray.push({id: index, username: tweet.username, content: tweet.content, latitude: tweet.latitude, longitude: tweet.longitude})
+        window.searchArray.push(tweet)
         display(aTweet);
         window.tweetArray.push(aTweet);
             // you can create anything you want with each tweet here
@@ -104,7 +95,8 @@ $(document).ready(function () {
         $.each(params, function( index, value) {
             paramsFloat.push(parseFloat(value))
         })
-        map.setView(new L.LatLng(params[1], params[0]), zoom = 8, animate = true)
+        var newLocation = (new L.LatLng(params[1], params[0]))
+        map.setView(newLocation, zoom = 8, animate = true)
     })
 
 });

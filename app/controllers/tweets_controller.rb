@@ -13,7 +13,7 @@ class TweetsController < ApplicationController
 
   def stream
     set_up_client
-    hashtag = '#SDCC'
+    hashtag = '#Lollapalooza2014'
     p hashtag
     TweetStream::Client.new.track(hashtag) do |twitter_tweet|
       # next if twitter_tweet.text.include? 'RT'
