@@ -4,7 +4,12 @@ task "stream:start" => :environment do
   include TwitterCredentialHelper
   set_up_client
   puts 'client set up...'
+<<<<<<< HEAD
   TweetStream::Client.new.track("#SDCC") do |twitter_tweet|
+=======
+  TweetStream::Client.new.track("#Lollapalooza2014") do |twitter_tweet|
+    # next if twitter_tweet.text.include? 'RT'
+>>>>>>> wat
     new_tweet = {
       username: twitter_tweet.user.screen_name,
       content: twitter_tweet.full_text,
